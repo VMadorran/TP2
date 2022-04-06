@@ -24,7 +24,7 @@ public class TarjetaTest {
 	Tarjeta visa = new Visa();
 	Tarjeta mastercard = new Mastercard();
 	Tarjeta comarca = new ComarcaPlus();
-	ServicioRegistroDePedido servicio =new ServicioRegistroDePedido();
+	ServicioRegistroDePedido servicio = new ServicioRegistroDePedido();
 
 	@Test
 	public void calcularCostoTarjetaVisa() {
@@ -41,11 +41,12 @@ public class TarjetaTest {
 
 		Pedido pedido = new Pedido(bebidas, platos, servicio);
 		pedido.confirmarPedido();
-		
+
 		String fechaString = String.format("%1$td/%1$tm/%1$tY", LocalDate.now());
-		double montoTotal=pedido.pagarPedido(visa);
+		double montoTotal = pedido.pagarPedido(visa);
+		
 		assertEquals(100.5, montoTotal);
-		assertEquals(fechaString + " || "+ montoTotal+"\n", servicio.contenido());
+		assertEquals(fechaString + " || " + montoTotal + "\n", servicio.contenido());
 	}
 
 	@Test
@@ -63,12 +64,13 @@ public class TarjetaTest {
 
 		Pedido pedido = new Pedido(bebidas, platos, servicio);
 		pedido.confirmarPedido();
-		
+
 		String fechaString = String.format("%1$td/%1$tm/%1$tY", LocalDate.now());
-		double montoTotal = pedido.pagarPedido(mastercard);
 		
+		double montoTotal = pedido.pagarPedido(mastercard);
+
 		assertEquals(101, montoTotal);
-		assertEquals(fechaString + " || " + montoTotal+"\n", servicio.contenido());
+		assertEquals(fechaString + " || " + montoTotal + "\n", servicio.contenido());
 	}
 
 	@Test
@@ -86,14 +88,13 @@ public class TarjetaTest {
 
 		Pedido pedido = new Pedido(bebidas, platos, servicio);
 		pedido.confirmarPedido();
-		
+
 		double montoTotal = pedido.pagarPedido(comarca);
+		
 		String fechaString = String.format("%1$td/%1$tm/%1$tY", LocalDate.now());
-	
-		
-		
+
 		assertEquals(100, montoTotal);
-		assertEquals(fechaString + " || " + montoTotal+"\n", servicio.contenido());
+		assertEquals(fechaString + " || " + montoTotal + "\n", servicio.contenido());
 	}
 
 	@Test
@@ -111,13 +112,13 @@ public class TarjetaTest {
 
 		Pedido pedido = new Pedido(bebidas, platos, servicio);
 		pedido.confirmarPedido();
-		
-		String fechaString = String.format("%1$td/%1$tm/%1$tY", LocalDate.now());
-		
-		double montoTotal= pedido.pagarPedido(tarjeta);
 
-		assertEquals(102,montoTotal);
-		assertEquals(fechaString + " || " + montoTotal+"\n", servicio.contenido());
+		String fechaString = String.format("%1$td/%1$tm/%1$tY", LocalDate.now());
+
+		double montoTotal = pedido.pagarPedido(tarjeta);
+
+		assertEquals(102, montoTotal);
+		assertEquals(fechaString + " || " + montoTotal + "\n", servicio.contenido());
 	}
 
 }

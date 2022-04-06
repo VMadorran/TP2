@@ -12,7 +12,7 @@ public class Main {
 
 		ArrayList<ItemMenu> bebidas = new ArrayList<ItemMenu>();
 		ArrayList<ItemMenu> platos = new ArrayList<ItemMenu>();
-		ServicioRegistroDePedido servicio =new ServicioRegistroDePedido();
+		ServicioRegistroDePedido servicio = new ServicioRegistroDePedido();
 
 		Tarjeta tarjeta = new Tarjeta();
 		ItemMenu bebidaA = new ItemMenu("gaseosa", 25);
@@ -28,7 +28,7 @@ public class Main {
 		Pedido pedido = new Pedido(bebidas, platos, servicio);
 		pedido.confirmarPedido();
 		pedido.pagarPedido(tarjeta);
-		
+
 		System.out.println(servicio.contenido());
 	}
 

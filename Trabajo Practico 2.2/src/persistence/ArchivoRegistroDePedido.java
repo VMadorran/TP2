@@ -13,8 +13,8 @@ public class ArchivoRegistroDePedido implements RegistroDePedido {
 	public void registrarPedido(String pedido) {
 		// TODO Auto-generated method stub
 		try {
-			Files.write(Paths.get("C:\\Users\\Valen\\Desktop\\tp2OO\\archivo pedido"),
-					pedido.getBytes(), StandardOpenOption.APPEND);
+			Files.write(Paths.get("C:\\Users\\Valen\\Desktop\\tp2OO\\archivo pedido"), pedido.getBytes(),
+					StandardOpenOption.APPEND);
 		} catch (IOException e) {
 			throw new RuntimeException("ERROR", e);
 		}
