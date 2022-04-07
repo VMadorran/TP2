@@ -3,6 +3,7 @@ package objetos;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import persistence.EnBaseRegistroDePedido;
 import persistence.ServicioRegistroDePedido;
 
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
 
 		ArrayList<ItemMenu> bebidas = new ArrayList<ItemMenu>();
 		ArrayList<ItemMenu> platos = new ArrayList<ItemMenu>();
-		ServicioRegistroDePedido servicio = new ServicioRegistroDePedido();
+		EnBaseRegistroDePedido servicio = new EnBaseRegistroDePedido();
 
 		Tarjeta tarjeta = new Tarjeta();
 		ItemMenu bebidaA = new ItemMenu("gaseosa", 25);
